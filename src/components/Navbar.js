@@ -27,7 +27,7 @@ function Navbar() {
           className="navbar-brand mb-0"
           onClick={() => isMobile && setMenuOpen(false)}
         >
-          Portfolyo
+          Tornado
         </a>
 
 

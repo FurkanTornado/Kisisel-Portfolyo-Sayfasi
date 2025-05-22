@@ -1098,32 +1098,32 @@ if __name__ == "__main__":
         }
         .portfolio-container {
           display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 32px;
-  justify-content: center;
-  margin-top: 32px;
-  width: 90%;
-  max-width: 1100px;
-  align-items: stretch;
+          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+          gap: 32px;
+          justify-content: center;
+          margin-top: 32px;
+          width: 90%;
+          max-width: 1100px;
+          align-items: stretch;
 
         }
         .card {
            display: flex;
-  flex-direction: column;
-  background: rgba(255,255,255,0.18);
-  backdrop-filter: blur(9px);
-  border-radius: 18px;
-  box-shadow: 0 2px 18px rgba(0,0,0,0.13);
-  border: 1.5px solid rgba(255,255,255,0.21);
-  min-height: 390px;      /* Kartların en az bu kadar olması için */
-  height: 100%;           /* Grid ile uyum için */
-  overflow: hidden;
-  transition: transform .25s, box-shadow .25s, background .15s;
+            flex-direction: column;
+            background: rgba(255,255,255,0.18);
+            backdrop-filter: blur(9px);
+            border-radius: 18px;
+            box-shadow: 0 2px 18px rgba(0,0,0,0.13);
+            border: 1.5px solid rgba(255,255,255,0.21);
+            min-height: 390px;      /* Kartların en az bu kadar olması için */
+            height: 100%;           /* Grid ile uyum için */
+            overflow: hidden;
+            transition: transform .25s, box-shadow .25s, background .15s;
         }
         .card:hover {
           transform: scale(1.04) translateY(-4px);
-  background: rgba(255,255,255,0.24);
-  box-shadow: 0 8px 28px rgba(34,34,34,0.15);
+          background: rgba(255,255,255,0.24);
+          box-shadow: 0 8px 28px rgba(34,34,34,0.15);
         }
         .card-img {
           width: 100%;
@@ -1134,9 +1134,9 @@ if __name__ == "__main__":
         .card-body {
           padding: 18px;
           display: flex;
-  flex-direction: column;
-  flex: 1;               /* Kart içeriğini dikeyde yaymak için */
-  justify-content: space-between;
+          flex-direction: column;
+          flex: 1;               
+          justify-content: space-between;
         }
         .card-title {
           font-size: 1.3rem;

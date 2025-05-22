@@ -70,15 +70,15 @@ function About() {
         }
         .about-container {
           background: rgba(255,255,255,0.18);
-  backdrop-filter: blur(14px);
-  border-radius: 24px;
-  border: 1.5px solid rgba(255,255,255,0.22);
-  padding: 48px 32px;
-  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.17);
-  color: #222;
-  max-width: 700px;
-  width: 100%;
-  text-align: center;
+          backdrop-filter: blur(14px);
+          border-radius: 24px;
+          border: 1.5px solid rgba(255,255,255,0.22);
+          padding: 48px 32px;
+          box-shadow: 0 8px 32px 0 rgba(31,38,135,0.17);
+          color: #222;
+          max-width: 700px;
+          width: 100%;
+          text-align: center;
         }
         .about-container h2 {
           font-size: 2rem;

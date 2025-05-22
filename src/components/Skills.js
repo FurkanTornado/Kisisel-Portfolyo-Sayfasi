@@ -12,7 +12,7 @@ const skillsList = [
   { name: "Python", logo: Python },
   { name: "SQL", logo: SQL },
   { name: "PyQt5", logo: PyQt5 },
-  { name: "Java", logo: Java },
+  { name: "JavaScript", logo: Java },
   { name: "HTML", logo: HTML },
   { name: "CSS", logo: css },
   { name: "React", logo: react },

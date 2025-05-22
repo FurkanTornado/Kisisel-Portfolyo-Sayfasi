@@ -87,27 +87,27 @@ function Contact() {
 
       <style>{`
       .social-links {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 36px;
-}
-.social-logo {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  border-radius: 50%;
-  transition: box-shadow 0.2s, filter 0.2s;
-  box-shadow: 0 1px 4px rgba(50,50,50,0.08);
-  background: #f4f4f4;
-}
-.social-logo:hover {
-  filter: brightness(0.9) drop-shadow(0 0 4px #2186eb88);
-}
-@media (max-width: 600px) {
-  .social-links { gap: 12px; }
-  .social-logo { width: 32px; height: 32px; }
-}
+          display: flex;
+          justify-content: center;
+          gap: 20px;
+          margin-top: 36px;
+        }
+        .social-logo {
+          width: 40px;
+          height: 40px;
+          object-fit: contain;
+          border-radius: 50%;
+          transition: box-shadow 0.2s, filter 0.2s;
+          box-shadow: 0 1px 4px rgba(50,50,50,0.08);
+          background: #f4f4f4;
+        }
+        .social-logo:hover {
+          filter: brightness(0.9) drop-shadow(0 0 4px #2186eb88);
+        }
+        @media (max-width: 600px) {
+          .social-links { gap: 12px; }
+          .social-logo { width: 32px; height: 32px; }
+        }
 
         .contact-section {
           max-width: 500px;

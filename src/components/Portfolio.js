@@ -1097,25 +1097,33 @@ if __name__ == "__main__":
           color: #888;
         }
         .portfolio-container {
-          display: flex;
-          gap: 32px;
-          justify-content: center;
-          flex-wrap: wrap;
-          margin-top: 32px;
+          display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  justify-content: center;
+  margin-top: 32px;
+  width: 90%;
+  max-width: 1100px;
+  align-items: stretch;
+
         }
         .card {
-          background: #fff;
-          border-radius: 16px;
-          box-shadow: 0 2px 16px rgba(0,0,0,0.12);
-          width: 320px;
-          margin: 0 auto 32px auto;
-          overflow: hidden;
-          transition: transform .2s;
-          display: flex;
-          flex-direction: column;
+           display: flex;
+  flex-direction: column;
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(9px);
+  border-radius: 18px;
+  box-shadow: 0 2px 18px rgba(0,0,0,0.13);
+  border: 1.5px solid rgba(255,255,255,0.21);
+  min-height: 390px;      /* Kartların en az bu kadar olması için */
+  height: 100%;           /* Grid ile uyum için */
+  overflow: hidden;
+  transition: transform .25s, box-shadow .25s, background .15s;
         }
         .card:hover {
-          transform: scale(1.03);
+          transform: scale(1.04) translateY(-4px);
+  background: rgba(255,255,255,0.24);
+  box-shadow: 0 8px 28px rgba(34,34,34,0.15);
         }
         .card-img {
           width: 100%;
@@ -1125,6 +1133,10 @@ if __name__ == "__main__":
         }
         .card-body {
           padding: 18px;
+          display: flex;
+  flex-direction: column;
+  flex: 1;               /* Kart içeriğini dikeyde yaymak için */
+  justify-content: space-between;
         }
         .card-title {
           font-size: 1.3rem;

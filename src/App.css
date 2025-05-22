@@ -1,12 +1,13 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #3e3d3d, #cec1b7); /* turuncu geçiş */
   min-height: 100vh;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
   color: #fff;
+  background:
+    linear-gradient(135deg, #f4ede7 0%, #e7d8c9 80%, #cec1b7 100%),
+    url("https://www.transparenttextures.com/patterns/symphony.png");
+  background-attachment: fixed;
+  background-size: cover, auto;
   
 }
 html, body {

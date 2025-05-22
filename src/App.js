@@ -7,6 +7,7 @@ import Skills from './components/Skills';
 import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
 import ScrollToTopButton from './components/ScrollToTopButton';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Portfolio />
       <Contact />
       <ScrollToTopButton />
+      <Footer />
       </>
   );
 }

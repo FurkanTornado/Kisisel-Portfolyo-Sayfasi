@@ -81,79 +81,84 @@ function Skills() {
 
       <style>{`
         .skills-section {
-          min-height: 70vh;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          padding: 60px 0 60px 0;
-        }
-        .skills-title {
-          font-size: 2rem;
-          margin-bottom: 32px;
-          letter-spacing: 1px;
-          color:rgb(31, 20, 6);
-          font-weight: 700;
-        }
-        .skills-list {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-          width: 100%;
-          max-width: 420px;
-          display: flex;
-          flex-direction: column;
-          gap: 26px;
-        }
-        .skill-item {
-          display: flex;
-          align-items: center;
-          font-size: 1.15rem;
-          font-weight: 600;
-          color: #222;
-          background: rgba(255,255,255,0.18);
-          border-radius: 11px;
-          box-shadow: 0 3px 12px 0 rgba(31,38,135,0.07);
-          padding: 15px 22px;
-          opacity: 0;
-          transform: translateY(40px);
-          transition: 
-            opacity 0.5s cubic-bezier(.67,.07,.43,1.01), 
-            transform 0.5s cubic-bezier(.67,.07,.43,1.01);
-        }
-        .skill-item.visible {
-          opacity: 1;
-          transform: translateY(0);
-        }
-        .skill-logo {
-          width: 36px;
-          height: 36px;
-          margin-right: 18px;
-          object-fit: contain;
-          background: #fff;
-          border-radius: 6px;
-          box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-        }
-        @media (max-width: 600px) {
-          .skills-section {
-            padding: 24px 0;
-          }
-          .skills-list {
-            max-width: 99vw;
-          }
-          .skill-item {
-            font-size: 1rem;
-            padding: 12px 8px;
-          }
-          .skill-logo {
-            width: 28px;
-            height: 28px;
-            margin-right: 12px;
-          }
-        }
-          #skills {
-          scroll-margin-top: 40px; /* Navbar'ın yüksekliği kadar boşluk bırak */
-        }
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0 60px 0;
+  width: 100%;
+}
+.skills-title {
+  font-size: 2.3rem;
+  margin-bottom: 36px;
+  letter-spacing: 1px;
+  color:rgb(31, 20, 6);
+  font-weight: 700;
+}
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 32px 28px;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 680px;
+}
+.skill-item {
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #222;
+  background: rgba(255,255,255,0.16);
+  backdrop-filter: blur(7px);
+  border-radius: 14px;
+  border: 1.3px solid rgba(255,255,255,0.22);
+  box-shadow: 0 3px 12px 0 rgba(31,38,135,0.09);
+  padding: 22px 30px;
+  min-height: 70px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 
+    opacity 0.45s cubic-bezier(.67,.07,.43,1.01), 
+    transform 0.45s cubic-bezier(.67,.07,.43,1.01), 
+    background 0.19s;
+}
+.skill-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+  background: rgba(255,255,255,0.26);
+}
+.skill-item:hover {
+  background: rgba(230,246,255,0.4);
+  box-shadow: 0 6px 22px 0 rgba(54,178,255,0.12);
+  transform: translateY(-4px) scale(1.04);
+}
+.skill-logo {
+  width: 48px;
+  height: 48px;
+  margin-right: 18px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 9px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.08);
+}
+@media (max-width: 900px) {
+  .skills-list {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    max-width: 98vw;
+  }
+  .skill-logo {
+    width: 38px; height: 38px;
+  }
+}
+@media (max-width: 600px) {
+  .skills-section { padding: 24px 0; }
+  .skills-list { grid-template-columns: 1fr; gap: 18px; }
+  .skill-item { font-size: 1.04rem; padding: 12px 8px; }
+  .skill-logo { width: 28px; height: 28px; margin-right: 10px; }
+}
       `}</style>
     </>
   );

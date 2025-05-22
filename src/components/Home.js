@@ -1,5 +1,51 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import tornadoIcon from '../assets/tornado.png';
+
+function TypewriterName() {
+  const firstText = "Ben H.Furkan Tahtalı";
+  const secondText = "Tornado";
+  const [display, setDisplay] = useState("");
+  const [showFirst, setShowFirst] = useState(true);
+  const [typing, setTyping] = useState(true);
+  const [i, setI] = useState(0);
+
+  useEffect(() => {
+    let timeout;
+    if (typing) {
+      if (showFirst) {
+        if (i < firstText.length) {
+          timeout = setTimeout(() => setI(i + 1), 90);
+          setDisplay(firstText.slice(0, i + 1));
+        } else {
+          timeout = setTimeout(() => setTyping(false), 1100);
+        }
+      } else {
+        if (i < secondText.length) {
+          timeout = setTimeout(() => setI(i + 1), 90);
+          setDisplay(secondText.slice(0, i + 1));
+        } else {
+          timeout = setTimeout(() => setTyping(false), 1200);
+        }
+      }
+    } else {
+      if (i > 0) {
+        timeout = setTimeout(() => setI(i - 1), 55);
+        setDisplay((showFirst ? firstText : secondText).slice(0, i - 1));
+      } else {
+        setTyping(true);
+        setShowFirst(!showFirst);
+      }
+    }
+    return () => clearTimeout(timeout);
+  }, [i, typing, showFirst]);
+
+  return (
+    <h2 style={{minHeight: "2.2em", fontFamily: "monospace"}}>
+      {display}
+      <span style={{ color: "#2186eb" }}>|</span>
+    </h2>
+  );
+}
 
 function Home() {
   useEffect(() => {
@@ -10,8 +56,8 @@ function Home() {
       <section id="home" className="home-section">
         <div className="container fade-right">
           <div className="baslik">
-            <h1>Merhaba,</h1>
-            <h2>Ben H.Furkan Tahtali(Tornado)</h2>
+            <h1>Merhaba</h1>
+            <TypewriterName />
           </div>
           <div className="aciklama">
             <p>
@@ -58,7 +104,20 @@ function Home() {
           justify-content: center;
           animation: fadeUp 1s ease-out forwards;
           margin-top: 0px; /* navbar yüksekliği kadar */
+          position: relative;
+          overflow: hidden;
         }
+          .home-section::before {
+  content: "";
+  position: absolute;
+  top: -90px; left: -140px;
+  width: 480px; height: 400px;
+  background: radial-gradient(circle at 60% 40%, #aeefff 0%, #fff4 100%);
+  opacity: 0.25;
+  z-index: 0;
+  border-radius: 42% 58% 56% 44%/54% 41% 59% 46%;
+  filter: blur(12px);
+}
 
         @media (max-width: 800px) {
           .home-section {
@@ -70,10 +129,10 @@ function Home() {
         }
           @media (max-width: 480px){
           .home-section {
-            height: 25 vh;  
           }
           .container {
             margin-top: 15%; /* navbar yüksekliği kadar */
+            position: relative; z-index: 1;
             }
           }
 

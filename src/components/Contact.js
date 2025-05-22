@@ -71,13 +71,13 @@ function Contact() {
       )}
        {/* SOSYAL MEDYA */}
       <div className="social-links">
-  <a href={"https://x.com"} target="_blank" rel="noopener noreferrer">
+  <a href={"https:\\x.com"} target="_blank" rel="noopener noreferrer">
     <img src={XLogo} alt="X" className="social-logo" />
   </a>
   <a href={"https://github.com/FurkanTornado"} target="_blank" rel="noopener noreferrer">
     <img src={GitHubLogo} alt="GitHub" className="social-logo" />
   </a>
-  <a href={"https://facebook.com/furkan.ft.2025"} target="_blank" rel="noopener noreferrer">
+  <a href={"https:\\facebook.com/furkan.ft.2025"} target="_blank" rel="noopener noreferrer">
     <img src={FacebookLogo} alt="Facebook" className="social-logo" />
   </a>
   <a href={"https://www.instagram.com/furkantornado?igsh=NDRnbGh3dGljaXVq&utm_source=qr"} target="_blank" rel="noopener noreferrer">

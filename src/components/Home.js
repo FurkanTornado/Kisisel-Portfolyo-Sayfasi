@@ -91,7 +91,7 @@ function Home() {
           }
         }
 
-        /* Arka plan (logo) animasyonu */
+        
         .home-section {
           background-image: url(${tornadoIcon});
           background-repeat: no-repeat;
@@ -108,16 +108,16 @@ function Home() {
           overflow: hidden;
         }
           .home-section::before {
-  content: "";
-  position: absolute;
-  top: -90px; left: -140px;
-  width: 480px; height: 400px;
-  background: radial-gradient(circle at 60% 40%, #aeefff 0%, #fff4 100%);
-  opacity: 0.25;
-  z-index: 0;
-  border-radius: 42% 58% 56% 44%/54% 41% 59% 46%;
-  filter: blur(12px);
-}
+          content: "";
+          position: absolute;
+          top: -90px; left: -140px;
+          width: 480px; height: 400px;
+          background: radial-gradient(circle at 60% 40%, #aeefff 0%, #fff4 100%);
+          opacity: 0.25;
+          z-index: 0;
+          border-radius: 42% 58% 56% 44%/54% 41% 59% 46%;
+          filter: blur(12px);
+        }
 
         @media (max-width: 800px) {
           .home-section {
@@ -137,7 +137,7 @@ function Home() {
           }
 
 
-        /* İçerik kutusu: sağdan gelen animasyon */
+        
         .fade-right {
           animation: fadeRight 1s ease-out forwards;
           animation-delay: 1s;

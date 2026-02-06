@@ -61,7 +61,7 @@ function Home() {
           </div>
           <div className="aciklama">
             <p>
-              Bilgisayar Mühendisliği 2. sınıf öğrencisiyim. Yazılıma olan ilgimle, bu alanda kendimi geliştirmeye devam ediyorum.
+                Bilgisayar Mühendisliği öğrencisiyim. Yazılım ve yeni teknolojilere olan ilgimle, bu alanlarda kendimi geliştirmeye devam ediyorum.
             </p>
           </div>
         </div>
@@ -172,4 +172,5 @@ function Home() {
 }
 
 export default Home;
+
 

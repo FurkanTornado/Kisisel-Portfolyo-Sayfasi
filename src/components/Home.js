@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import tornadoIcon from '../assets/tornado.png';
 
 function TypewriterName() {
-  const firstText = "Ben H.Furkan Tahtalı";
-  const secondText = "Tornado";
+  const firstText = "Ben";
+  const secondText = "H.Furkan Tahtalı";
   const [display, setDisplay] = useState("");
   const [showFirst, setShowFirst] = useState(true);
   const [typing, setTyping] = useState(true);
@@ -172,3 +172,4 @@ function Home() {
 }
 
 export default Home;
+

@@ -3,40 +3,61 @@ import XLogo from "../assets/X.png";
 import GitHubLogo from "../assets/GitHub.png";
 import FacebookLogo from "../assets/Facebook.png";
 import InstagramLogo from "../assets/Instagram.png";
+
 function Contact() {
   const [form, setForm] = useState({
     name: "",
     email: "",
     message: "",
   });
+
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+  const [isSending, setIsSending] = useState(false);
 
   useEffect(() => {
-    if (submitted) {
-      const timer = setTimeout(() => setSubmitted(false), 2000);
-      return () => clearTimeout(timer);
-    }
+    if (!submitted) return;
+    const timer = setTimeout(() => setSubmitted(false), 2000);
+    return () => clearTimeout(timer);
   }, [submitted]);
 
   const handleChange = (e) => {
+    setError("");
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
-  const endpoint = "https://formspree.io/f/mwpozale"; // Formspree endpoint
-  const response = await fetch(endpoint, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(form)
-  });
-  setSubmitted(true);
-  setForm({ name: "", email: "", message: "" });
-};
+    e.preventDefault();
+
+    setIsSending(true);
+    setError("");
+
+    const endpoint = "https://formspree.io/f/mwpozale"; // Formspree endpoint
+
+    try {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (!response.ok) {
+        throw new Error("Mesaj gönderilirken bir hata oluştu. Lütfen tekrar deneyin.");
+      }
+
+      setSubmitted(true);
+      setForm({ name: "", email: "", message: "" });
+    } catch (err) {
+      setError(err?.message || "Mesaj gönderilirken bir hata oluştu. Lütfen tekrar deneyin.");
+    } finally {
+      setIsSending(false);
+    }
+  };
 
   return (
     <section id="contact" className="contact-section">
       <h2>İletişim</h2>
+
       <form className="contact-form" onSubmit={handleSubmit}>
         <input
           type="text"
@@ -46,6 +67,7 @@ function Contact() {
           onChange={handleChange}
           required
         />
+
         <input
           type="email"
           name="email"
@@ -54,6 +76,7 @@ function Contact() {
           onChange={handleChange}
           required
         />
+
         <textarea
           name="message"
           placeholder="Mesajınız"
@@ -62,28 +85,48 @@ function Contact() {
           onChange={handleChange}
           required
         ></textarea>
-        <button type="submit">Gönder</button>
+
+        <button type="submit" disabled={isSending}>
+          {isSending ? "Gönderiliyor..." : "Gönder"}
+        </button>
       </form>
+
       {submitted && (
-        <div className="success-message">
-          Mesajınız başarıyla gönderildi!
-        </div>
+        <div className="success-message">Mesajınız başarıyla gönderildi!</div>
       )}
-       {/* SOSYAL MEDYA */}
+
+      {error && <div className="error-message">{error}</div>}
+
+      {/* SOSYAL MEDYA */}
       <div className="social-links">
-  <a href={"https://x.com"} target="_blank" rel="noopener noreferrer">
-    <img src={XLogo} alt="X" className="social-logo" />
-  </a>
-  <a href={"https://github.com/FurkanTornado"} target="_blank" rel="noopener noreferrer">
-    <img src={GitHubLogo} alt="GitHub" className="social-logo" />
-  </a>
-  <a href={"https://facebook.com/furkan.ft.2025"} target="_blank" rel="noopener noreferrer">
-    <img src={FacebookLogo} alt="Facebook" className="social-logo" />
-  </a>
-  <a href={"https://www.instagram.com/furkantornado?igsh=NDRnbGh3dGljaXVq&utm_source=qr"} target="_blank" rel="noopener noreferrer">
-    <img src={InstagramLogo} alt="Instagram" className="social-logo" />
-  </a>
-</div>
+        <a href="https://x.com" target="_blank" rel="noopener noreferrer">
+          <img src={XLogo} alt="X" className="social-logo" />
+        </a>
+
+        <a
+          href="https://github.com/FurkanTornado"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src={GitHubLogo} alt="GitHub" className="social-logo" />
+        </a>
+
+        <a
+          href="https://facebook.com/furkan.ft.2025"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src={FacebookLogo} alt="Facebook" className="social-logo" />
+        </a>
+
+        <a
+          href="https://www.instagram.com/furkantornado?igsh=NDRnbGh3dGljaXVq&utm_source=qr"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src={InstagramLogo} alt="Instagram" className="social-logo" />
+        </a>
+      </div>
 
       <style>{`
       .social-links {
@@ -177,3 +220,4 @@ function Contact() {
 }
 
 export default Contact;
+

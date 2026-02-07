@@ -999,17 +999,16 @@ if __name__ == "__main__":
               <p className="card-desc">Kendimi ve projelerimi tanıttığım kişisel portfolyo sitesi.</p>
               <strong className="card-desc">Kullanılan Teknolojiler</strong>
               <p className="card-desc">HTML, CSS, JavaScript</p>
-              <a
-                href="#"
+              <button
+                type="button"
                 className="card-link"
-                onClick={e => {
-                  e.stopPropagation();
-                  e.preventDefault();
-                  alert("İncelemek için sağ tık → İncele veya F12 tuşuna basabilirsin.");
+                onClick={(e) => {
+                    e.stopPropagation();
+                    alert("İncelemek için sağ tık → İncele veya F12 tuşuna basabilirsin.");
                 }}
-              >
+                >
                 Kaynak Kodu İncele
-              </a>
+              </button>
             </div>
           </div>
           {/* 2. Kart */}
@@ -1020,17 +1019,16 @@ if __name__ == "__main__":
               <p className="card-desc">Araç bakım ve servis yönetim sistemi.</p>
               <strong className="card-desc">Kullanılan Teknolojiler</strong>
               <p className="card-desc">Python, PyQt5, SQLite</p>
-              <a
-                href="#"
+              <button
+                type="button"
                 className="card-link"
-                onClick={e => {
-                  e.stopPropagation();
-                  e.preventDefault();
-                  setShowCodeModal(true);
+                onClick={(e) => {
+                    e.stopPropagation();
+                    alert("İncelemek için sağ tık → İncele veya F12 tuşuna basabilirsin.");
                 }}
-              >
+                >
                 Kaynak Kodu İncele
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -1220,3 +1218,4 @@ if __name__ == "__main__":
 }
 
 export default Portfolio;
+
